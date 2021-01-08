@@ -27,7 +27,7 @@ for filename in glob.glob(os.path.join(folder_path, '*.eaf')):
                 finallist.append(items.split("(")[0]) #add body part to list
             prev = current
         hitlist[:] = []
-        print(finallist)
+        #print(finallist)
         test = open(filename.rstrip(".eaf")+".txt","w+")
         for items in finallist:
             test.write(items + "\n")
