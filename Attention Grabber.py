@@ -1,3 +1,4 @@
+#Made by and for Group 1 P4 Human-Computer Interaction, Hampus Tuokkola, Zozk Mohamed & Samuel Östeby.
 import os,glob
 import PySimpleGUI as sg
 import time
@@ -74,15 +75,16 @@ def gui():
     while True:
         event, task = window.read()
         if event == sg.WIN_CLOSED or event=="Exit":
+            sg.popup("Made by: Hampus Tuokkola, Zozk Mohamed & Samuel Östeby", title = "Attention grabber")
             break
         elif event == "Submit":
             location = sg.popup_get_folder("Please input your desired folder.", title="Attention grabber")
             outputname = sg.popup_get_text("Please input the name of the output.", title="Attention grabber") 
             try:
                 driver(task[0], location,outputname)
-                sg.popup_timed("Success",auto_close_duration=1) 
+                sg.popup("Success",auto_close_duration=1) 
             except:
-                sg.popup_timed("Error",auto_close_duration=2) 
+                sg.popup("Error",auto_close_duration=2) 
                 pass
 
 gui()
